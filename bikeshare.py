@@ -19,7 +19,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    
+
     city = input('Please select a city name from Chicago, New York City, or Washington: ')
     while city.lower() not in city_list:
         print ('Please enter a correct city name!\n')
@@ -32,7 +32,7 @@ def get_filters():
         month = input('Please choose a month name from January to June, or simply choose all: ')
     print('\n Your month selection is', month, '.\n')
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    
+
     day = input('Please choose a day of week from Monday to Sunday, or simply choose all: ')
     while day.lower() not in day_list:
         print ('Please enter a correct day name!\n')
@@ -80,7 +80,7 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
+
     # TO DO: display the most common month
     common_month = df['month'].mode()[0]
     print('The most common month is:', common_month)
@@ -115,7 +115,7 @@ def station_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -149,7 +149,7 @@ def user_stats(df):
     if 'gender' in df.columns:
         print('\nThe gender count information is below\n')
         gender_display = df['Gender'].value_counts()
-    
+
 
     # TO DO: Display earliest, most recent, and most common year of birth
         earliest_birth_year = df['Birth Year'].min()
@@ -163,7 +163,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+# Create the interaction system so that users can find out bikeshare data based on their preference
 def main():
     while True:
         city, month, day = get_filters()
