@@ -25,7 +25,7 @@ def get_filters():
         print ('Please enter a correct city name!\n')
         city = input('Please select a city name from Chicago, New York City, or Washington: ')
     # TO DO: get user input for month (all, january, february, ... , june)
-    print('\n You selected', city , 'to explore.\n')
+    print('\n You selected {} to explore.\n'.format(city))
     month = input('Please choose a month name from january to june, or simply choose all: ')
     while month.lower() not in month_list:
         print ('Please enter a correct month name!\n')
@@ -37,7 +37,7 @@ def get_filters():
     while day.lower() not in day_list:
         print ('Please enter a correct day name!\n')
         day = input('Please choose a day of week, from Monday to Sunday, or simply choose all: ')
-    print('\n Your day of week selection is', day, '.\n')
+    print('\n Your day of week selection is {}. \n'.format(day))
     print('-'*40)
     return city, month, day
 
@@ -89,7 +89,7 @@ def time_stats(df):
     print('The most common day of week is:', common_day_of_week)
     # TO DO: display the most common start hour
     common_hour = df['hour'].mode()[0]
-    print('The most common hour is:', common_hour)
+    print('The most common hour is {}.'.format(common_hour))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -102,17 +102,15 @@ def station_stats(df):
 
     # TO DO: display most commonly used start station
     common_start_station = df['Start Station'].mode()[0]
-    print ('The most commonly used start station is:', common_start_station)
+    print ('The most commonly used start station is {}.'.format(common_start_station))
     # TO DO: display most commonly used end station
     common_end_station = df['End Station'].mode()[0]
-    print ('The most commonly used end station is:', common_end_station)
-
+    print ('The most commonly used end station is {}.'.format(common_end_station))
     # TO DO: display most frequent combination of start station and end station trip
     #df['combination'] = df['Start Station'] + df['End Station']
     #most_frequent_combination = df['combination'].mode()[0]
     most_frequent = df.groupby(['Start Station','End Station']).size().nlargest(1)
-    print ('The most frequent combination of start and end station is:', most_frequent)
-
+    print ('The most frequent combination of start and end station is {}.'.format(most_frequent))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
