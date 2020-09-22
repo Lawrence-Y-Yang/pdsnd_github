@@ -1,15 +1,13 @@
 ### Date created
-Include the date you created this project and README file.
-
+Sep 22, 2020
 ### Project Title
-Replace the Project Title
-
+Explore US Bikeshare Data
 ### Description
-Describe what your project is about and what it does
-
+In this project, the bike share data of Chicago, New York City, and Washington are explored. Python was used to compute descriptive statistics results of the bikeshare data. Sample questions included but not limited to what was the most common time of travel for each city, what was the average trip duration, etc. Also, an interactive function was added so that users can enter relevant information and consult the bikeshare data that they are curious about.
 ### Files used
-Include the files used
-
+bikeshare.py
+chicago.csv
+washington.csv
+new_york_city.csv
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Udacity Nanodegree Program - Programming for Data Science with Python - Project 2
